@@ -66,5 +66,4 @@ ANY QUERY - {os.getenv("CONTACT_2")}
 
     st.subheader("⬜ Website Description")
     st.code(f"""TRANSMISSION - {transmission}
-COLOUR - {colour}
-PRICE - {price} LAKHS (ON TABLE NEGOTIABLE)""")
+COLOUR - {colour}""")
