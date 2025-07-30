@@ -37,7 +37,7 @@ CONTACT - {os.getenv("CONTACT_1")}
 WEBSITE - {os.getenv("WEBSITE")}
 INSTAGRAM - {os.getenv("INSTAGRAM")}
 FACEBOOK - {os.getenv("FACEBOOK")}
-WHATSAPP - {os.getenv("WHATSAPP_LINK")}
+WHATSAPP - {os.getenv("WHATSAPP")}
 """)
 
     st.subheader("🟨 Hashtags")
