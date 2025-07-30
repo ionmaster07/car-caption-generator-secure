@@ -2,7 +2,7 @@ import streamlit as st
 import os
 from dotenv import load_dotenv
 
-load_dotenv()  # Load environment variables from .env file
+load_dotenv()
 
 st.set_page_config(page_title="Car Post Generator", layout="centered")
 st.title("🚗 Car Post Generator")
@@ -19,7 +19,6 @@ colour = st.text_input("Colour")
 price = st.text_input("Price (in Lakhs)")
 
 if st.button("Generate"):
-    # UPPER CASE for consistency
     fuel = fuel.upper()
     transmission = transmission.upper()
 
@@ -30,10 +29,14 @@ if st.button("Generate"):
     st.code(f"""TRANSMISSION - {transmission}
 COLOUR - {colour}
 PRICE - {price} LAKHS (ON TABLE NEGOTIABLE)
-CONTACT - {os.getenv("CONTACT_1")}
+""")
+
+    st.subheader("🟧 YouTube Pinned Comment")
+    st.code(f"""CONTACT - {os.getenv("CONTACT_1")}
 WEBSITE - {os.getenv("WEBSITE")}
 INSTAGRAM - {os.getenv("INSTAGRAM")}
 FACEBOOK - {os.getenv("FACEBOOK")}
+WHATSAPP - {os.getenv("WHATSAPP_LINK")}
 """)
 
     st.subheader("🟨 Hashtags")
