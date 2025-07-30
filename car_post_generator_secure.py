@@ -41,9 +41,10 @@ WHATSAPP - {os.getenv("WHATSAPP")}
 """)
 
     st.subheader("🟨 Hashtags")
-    hashtags_static = "#CarForSale,#UsedCarDelhi,#UsedCarNCR,#MahajanMotor,#OLXAutos,#VerifiedCars,#SecondHandCars,#UsedCarsIndia,#DelhiCars,#CarDealerDelhi,#BudgetCars,#CarDeals,#UsedCarDealer,#PreOwnedCars,#OLXCars,#DelhiUsedCars"
-    hashtags_dynamic = f"#{name.replace(' ', '')},#{model.replace(' ', '')},#{year},#{owner.replace(' ', '')}Owner,#{fuel.replace(' ', '')},#{transmission.replace(' ', '')},#{colour.replace(' ', '')}"
-    st.code(f"{hashtags_static},{hashtags_dynamic}")
+    hashtags_static = "#carforsale #usedcardelhi #usedcarncr #mahajanmotor #olxautos #verifiedcars #secondhandcars #usedcarsindia #delhicars #cardealerdelhi #budgetcars #cardeals #usedcardealer #preownedcars #olxcars #delhiusedcars"
+    hashtags_dynamic = f"#{name.replace(' ', '')} #{model.replace(' ', '')} #{year} #{owner.replace(' ', '')}Owner #{fuel.replace(' ', '')} #{transmission.replace(' ', '')} #{colour.replace(' ', '')}"
+    full_hashtags = f"{hashtags_static} {hashtags_dynamic}"
+    st.code(full_hashtags)
 
     st.subheader("🟩 Instagram / Facebook Caption")
     st.code(f"""{name}
@@ -57,6 +58,8 @@ TRANSMISSION - {transmission}
 INSURANCE TYPE - COMPREHENSIVE
 ASKING PRICE - {price} LAKHS (ON TABLE NEGOTIABLE)
 ANY QUERY - {os.getenv("CONTACT_2")}
+
+{full_hashtags}
 """)
 
     st.subheader("🟥 WEBSITE")
