@@ -29,6 +29,7 @@ if st.button("Generate"):
     st.code(f"""TRANSMISSION - {transmission}
 COLOUR - {colour}
 PRICE - {price} LAKHS (ON TABLE NEGOTIABLE)
+CONTACT - {os.getenv("CONTACT_1")}
 """)
 
     st.subheader("🟧 YouTube Pinned Comment")
