@@ -40,11 +40,11 @@ FACEBOOK - {os.getenv("FACEBOOK")}
 WHATSAPP - {os.getenv("WHATSAPP")}
 """)
 
-    st.subheader("🟨 Hashtags")
-    hashtags_static = "#carforsale #usedcardelhi #usedcarncr #mahajanmotor #olxautos #verifiedcars #secondhandcars #usedcarsindia #delhicars #cardealerdelhi #budgetcars #cardeals #usedcardealer #preownedcars #olxcars #delhiusedcars"
-    hashtags_dynamic = f"#{name.replace(' ', '')} #{model.replace(' ', '')} #{year} #{owner.replace(' ', '')}Owner #{fuel.replace(' ', '')} #{transmission.replace(' ', '')} #{colour.replace(' ', '')}"
-    full_hashtags = f"{hashtags_static} {hashtags_dynamic}"
-    st.code(full_hashtags)
+    st.subheader("🟨 Hashtags (YouTube)")
+    hashtags_static_yt = "#CarForSale,#UsedCarDelhi,#UsedCarNCR,#MahajanMotor,#OLXAutos,#VerifiedCars,#SecondHandCars,#UsedCarsIndia,#DelhiCars,#CarDealerDelhi,#BudgetCars,#CarDeals,#UsedCarDealer,#PreOwnedCars,#OLXCars,#DelhiUsedCars"
+    hashtags_dynamic_yt = f"#{name.replace(' ', '')},#{model.replace(' ', '')},#{year},#{owner.replace(' ', '')}Owner,#{fuel.replace(' ', '')},#{transmission.replace(' ', '')},#{colour.replace(' ', '')}"
+    full_hashtags_yt = f"{hashtags_static_yt},{hashtags_dynamic_yt}"
+    st.code(full_hashtags_yt)
 
     st.subheader("🟩 Instagram / Facebook Caption")
     st.code(f"""{name}
@@ -59,12 +59,23 @@ INSURANCE TYPE - COMPREHENSIVE
 ASKING PRICE - {price} LAKHS (ON TABLE NEGOTIABLE)
 ANY QUERY - {os.getenv("CONTACT_2")}
 
-{full_hashtags}
+#carforsale #usedcardelhi #usedcarncr #mahajanmotor #olxautos #verifiedcars #secondhandcars #usedcarsindia #delhicars #cardealerdelhi #budgetcars #cardeals #usedcardealer #preownedcars #olxcars #delhiusedcars #{name.replace(' ', '')} #{model.replace(' ', '')} #{year} #{owner.replace(' ', '')}Owner #{fuel.replace(' ', '')} #{transmission.replace(' ', '')} #{colour.replace(' ', '')}
 """)
 
-    st.subheader("🟥 WEBSITE")
-    st.code(f"{name} | MODEL - {model} | {year} | {owner} OWNER | {driven} KM | {fuel}")
+    st.subheader("🟥 WEBSITE Title")
+    st.code(f"{name}")
 
-    st.subheader("🟦 WEBSITE DESCRIPTION")
-    st.code(f"""TRANSMISSION - {transmission}
-COLOUR - {colour}""")
+    st.subheader("🟦 WEBSITE Description")
+    st.code(f"{model} | {year} | {owner} OWNER | {driven} KM | {transmission} | {colour}")
+
+    st.subheader("🟪 WhatsApp Title")
+    st.code(f"""{name}
+YEAR - {year}
+MODEL - {model}
+DRIVEN - {driven} KM
+OWNER - {owner}
+FUEL TYPE - {fuel}
+COLOUR - {colour}
+TRANSMISSION - {transmission}
+INSURANCE TYPE - COMPREHENSIVE
+""")
