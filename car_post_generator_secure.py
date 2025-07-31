@@ -14,7 +14,7 @@ year = st.text_input("Year")
 owner = st.selectbox("Owner Count", ["1st", "2nd", "3rd", "4th+"])
 driven = st.text_input("Driven Distance (in KM)")
 fuel = st.selectbox("Fuel Type", ["PETROL/HYBRID", "DIESEL/HYBRID", "PETROL", "DIESEL", "PETROL + CNG"])
-transmission = st.selectbox("Transmission", ["MANUAL", "AUTOMATIC", "AMT", "CVT", "DSG"])
+transmission = st.selectbox("Transmission", ["MANUAL", "AUTOMATIC", "IMT", "CVT", "DSG"])
 colour = st.text_input("Colour")
 price = st.text_input("Price (in Lakhs)")
 
