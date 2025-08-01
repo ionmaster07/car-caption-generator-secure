@@ -24,23 +24,30 @@ if st.button("Generate"):
     transmission = transmission.upper()
     insurance = insurance.upper()
 
-    st.subheader("🟥 YouTube Title")
-    st.code(f"{name} | MODEL - {model} | {year} | {owner} OWNER | {driven} KM | {fuel}")
-
-    st.subheader("🟦 YouTube Description")
-    st.code(f"""TRANSMISSION - {transmission}
+    youtube_title = f"{name} | MODEL - {model} | {year} | {owner} OWNER | {driven} KM | {fuel}"
+    youtube_desc = f"""TRANSMISSION - {transmission}
 COLOUR - {colour}
 INSURANCE TYPE - {insurance}
 PRICE - {price} LAKHS (ON TABLE NEGOTIABLE)
-CONTACT - {os.getenv("CONTACT_1")}
-""")
+CONTACT - {os.getenv("CONTACT_1")}"""
 
-    st.subheader("🟧 YouTube Pinned Comment")
-    st.code(f"""CONTACT - {os.getenv("CONTACT_1")}
-WEBSITE - {os.getenv("WEBSITE")}
+    youtube_pinned = f"""WEBSITE - {os.getenv("WEBSITE")}
 INSTAGRAM - {os.getenv("INSTAGRAM")}
 FACEBOOK - {os.getenv("FACEBOOK")}
-WHATSAPP - {os.getenv("WHATSAPP")}
+WHATSAPP - {os.getenv("WHATSAPP")}"""
+
+    st.subheader("🟥 YouTube Title")
+    st.code(youtube_title)
+
+    st.subheader("🟦 YouTube Description")
+    st.code(youtube_desc)
+
+    st.subheader("🟥 YouTube Post")
+    st.code(f"""{youtube_title}
+
+{youtube_desc}
+
+{youtube_pinned}
 """)
 
     st.subheader("🟨 Hashtags (YouTube)")
@@ -72,8 +79,7 @@ ANY QUERY - {os.getenv("CONTACT_2")}
     st.code(f"{model} | {year} | {owner} OWNER | {driven} KM | {transmission} | {colour}")
 
     st.subheader("🟪 WhatsApp Title")
-    st.code(f"""{name}
-YEAR - {year}
+    st.code(f"""YEAR - {year}
 MODEL - {model}
 DRIVEN - {driven} KM
 OWNER - {owner}
