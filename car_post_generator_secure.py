@@ -16,11 +16,13 @@ driven = st.text_input("Driven Distance (in KM)")
 fuel = st.selectbox("Fuel Type", ["PETROL/HYBRID", "DIESEL/HYBRID", "PETROL", "DIESEL", "PETROL + CNG"])
 transmission = st.selectbox("Transmission", ["MANUAL", "AUTOMATIC", "IMT", "CVT", "DSG"])
 colour = st.text_input("Colour")
+insurance = st.selectbox("Insurance Type", ["ZERO DEP.", "COMPREHENSIVE", "NO", "THIRD PARTY"])
 price = st.text_input("Price (in Lakhs)")
 
 if st.button("Generate"):
     fuel = fuel.upper()
     transmission = transmission.upper()
+    insurance = insurance.upper()
 
     st.subheader("🟥 YouTube Title")
     st.code(f"{name} | MODEL - {model} | {year} | {owner} OWNER | {driven} KM | {fuel}")
@@ -28,6 +30,7 @@ if st.button("Generate"):
     st.subheader("🟦 YouTube Description")
     st.code(f"""TRANSMISSION - {transmission}
 COLOUR - {colour}
+INSURANCE TYPE - {insurance}
 PRICE - {price} LAKHS (ON TABLE NEGOTIABLE)
 CONTACT - {os.getenv("CONTACT_1")}
 """)
@@ -55,7 +58,7 @@ OWNER - {owner}
 FUEL TYPE - {fuel}
 COLOUR - {colour}
 TRANSMISSION - {transmission}
-INSURANCE TYPE - COMPREHENSIVE
+INSURANCE TYPE - {insurance}
 ASKING PRICE - {price} LAKHS (ON TABLE NEGOTIABLE)
 ANY QUERY - {os.getenv("CONTACT_2")}
 
@@ -77,5 +80,5 @@ OWNER - {owner}
 FUEL TYPE - {fuel}
 COLOUR - {colour}
 TRANSMISSION - {transmission}
-INSURANCE TYPE - COMPREHENSIVE
+INSURANCE TYPE - {insurance}
 """)
