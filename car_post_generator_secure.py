@@ -7,13 +7,19 @@ load_dotenv()
 st.set_page_config(page_title="Car Post Generator", layout="centered")
 st.title("🚗 Car Post Generator")
 
+# Define the contact number here for easy updating
+CONTACT_NUMBER = "9810323945"
+
 # Inputs
 name = st.text_input("Car Name")
 model = st.text_input("Model")
 year = st.text_input("Year")
 owner = st.selectbox("Owner Count", ["1st", "2nd", "3rd", "4th+"])
 driven = st.text_input("Driven Distance (in KM)")
-fuel = st.selectbox("Fuel Type", ["PETROL/HYBRID", "DIESEL/HYBRID", "PETROL", "DIESEL", "PETROL + CNG"])
+
+# --- CHANGE 1: Added "ELECTRIC" to the list ---
+fuel = st.selectbox("Fuel Type", ["PETROL/HYBRID", "DIESEL/HYBRID", "PETROL", "DIESEL", "PETROL + CNG", "ELECTRIC"])
+
 transmission = st.selectbox("Transmission", ["MANUAL", "AUTOMATIC", "IMT", "CVT", "DSG"])
 colour = st.text_input("Colour")
 insurance = st.selectbox("Insurance Type", ["ZERO DEP.", "COMPREHENSIVE", "NO", "THIRD PARTY"])
@@ -24,12 +30,13 @@ if st.button("Generate"):
     transmission = transmission.upper()
     insurance = insurance.upper()
 
+    # --- CHANGE 2: Replaced os.getenv("CONTACT_1") with hardcoded number ---
     youtube_title = f"{name} | MODEL - {model} | {year} | {owner} OWNER | {driven} KM | {fuel}"
     youtube_desc = f"""TRANSMISSION - {transmission}
 COLOUR - {colour}
 INSURANCE TYPE - {insurance}
 PRICE - {price} LAKHS (ON TABLE NEGOTIABLE)
-CONTACT - {os.getenv("CONTACT_1")}"""
+CONTACT - {CONTACT_NUMBER}"""
 
     youtube_pinned = f"""WEBSITE - {os.getenv("WEBSITE")}
 INSTAGRAM - {os.getenv("INSTAGRAM")}
@@ -57,6 +64,8 @@ WHATSAPP - {os.getenv("WHATSAPP")}"""
     st.code(full_hashtags_yt)
 
     st.subheader("🟩 Instagram / Facebook Caption")
+    
+    # --- CHANGE 3: Replaced os.getenv("CONTACT_2") with hardcoded number ---
     st.code(f"""{name}
 YEAR - {year}
 MODEL - {model}
@@ -67,7 +76,7 @@ COLOUR - {colour}
 TRANSMISSION - {transmission}
 INSURANCE TYPE - {insurance}
 ASKING PRICE - {price} LAKHS (ON TABLE NEGOTIABLE)
-ANY QUERY - {os.getenv("CONTACT_2")}
+ANY QUERY - {CONTACT_NUMBER}
 
 #carforsale #usedcardelhi #usedcarncr #mahajanmotor #olxautos #verifiedcars #secondhandcars #usedcarsindia #delhicars #cardealerdelhi #budgetcars #cardeals #usedcardealer #preownedcars #olxcars #delhiusedcars #{name.replace(' ', '')} #{model.replace(' ', '')} #{year} #{owner.replace(' ', '')}Owner #{fuel.replace(' ', '')} #{transmission.replace(' ', '')} #{colour.replace(' ', '')}
 """)
