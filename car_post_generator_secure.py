@@ -17,7 +17,7 @@ year = st.text_input("Year")
 owner = st.selectbox("Owner Count", ["1st", "2nd", "3rd", "4th+"])
 driven = st.text_input("Driven Distance (in KM)")
 
-# --- CHANGE 1: Added "ELECTRIC" to the list ---
+# Fuel Type Selection
 fuel = st.selectbox("Fuel Type", ["PETROL/HYBRID", "DIESEL/HYBRID", "PETROL", "DIESEL", "PETROL + CNG", "ELECTRIC"])
 
 transmission = st.selectbox("Transmission", ["MANUAL", "AUTOMATIC", "IMT", "CVT", "DSG"])
@@ -30,7 +30,6 @@ if st.button("Generate"):
     transmission = transmission.upper()
     insurance = insurance.upper()
 
-    # --- CHANGE 2: Replaced os.getenv("CONTACT_1") with hardcoded number ---
     youtube_title = f"{name} | MODEL - {model} | {year} | {owner} OWNER | {driven} KM | {fuel}"
     youtube_desc = f"""TRANSMISSION - {transmission}
 COLOUR - {colour}
@@ -65,7 +64,6 @@ WHATSAPP - {os.getenv("WHATSAPP")}"""
 
     st.subheader("🟩 Instagram / Facebook Caption")
     
-    # --- CHANGE 3: Replaced os.getenv("CONTACT_2") with hardcoded number ---
     st.code(f"""{name}
 YEAR - {year}
 MODEL - {model}
@@ -82,7 +80,8 @@ ANY QUERY - {CONTACT_NUMBER}
 """)
 
     st.subheader("🟥 WEBSITE Title")
-    st.code(f"{name}")
+    # --- UPDATED LINE BELOW ---
+    st.code(f"{name} | {fuel}")
 
     st.subheader("🟦 WEBSITE Description")
     st.code(f"{model} | {year} | {owner} OWNER | {driven} KM | {transmission} | {colour}")
